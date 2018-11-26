@@ -1,17 +1,40 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Hello from "./new.js";
-import "./styles.css";
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0
+    };
+    this.addOne = this.addOne.bind(this);
+    this.SubOne = this.SubOne.bind(this);
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello World</h1>
-      <h2>Lets create some miracle!</h2>
-      <Hello data="hello" />
-    </div>
-  );
+  addOne = () => {
+    this.setState({
+      counter: this.state.counter + 1
+    });
+  };
+
+  SubOne = () => {
+    this.setState({
+      counter: this.state.counter - 1
+    });
+  };
+
+  render = () => {
+    return (
+      <div>
+        <button onClick={this.addOne} class="button">
+          Increment
+        </button>
+
+        <button onClick={this.SubOne} class="button button3">
+          Decrement
+        </button>
+        <h1> {this.state.counter}</h1>
+      </div>
+    );
+  };
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+export default App;

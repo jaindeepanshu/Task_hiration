@@ -1,8 +1,17 @@
 import React from "react";
+import ReactDOM from "react-dom";
+import Apps from "./index";
+import "./styles.css";
 
-class Hello extends React.Component {
-  render() {
-    return <h3> {this.props.data} </h3>;
-  }
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello Hiration Interns</h1>
+      <h2>Lets create some miracle!</h2>
+      <Apps />
+    </div>
+  );
 }
-export default Hello;
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
