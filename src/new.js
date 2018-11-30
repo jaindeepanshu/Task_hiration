@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Apps from "./index";
 import "./styles.css";
+import List from "./list.js";
 
-function App() {
+/*function App() {
   return (
     <div className="App">
       <h1>Hello Hiration Interns</h1>
@@ -11,7 +12,17 @@ function App() {
       <Apps />
     </div>
   );
+}*/
+
+class Parents extends React.Component {
+  render = () => {
+    return (
+      <div>
+        <List />
+      </div>
+    );
+  };
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<Parents />, rootElement);
